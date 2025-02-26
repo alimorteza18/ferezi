@@ -1,0 +1,37 @@
+.sidebarContainer {
+  width: 100vw;
+  max-width: 350px;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  z-index: 99;
+  direction: rtl;
+
+  transition: right ease 0.5s;
+
+  .menuItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 24px;
+  }
+
+  // display: flex;
+  // [dir="ltr"] & {
+  //   right: -350px;
+  // }
+  // width: 320px;
+  // background-color: #434343;
+  // border: 2px solid blue;
+  // border-radius: 0 15px 15px 0;
+  // height: calc(100vh - theme("height.footerMenu"));
+  // transition: all 0.3s ease;
+}
+.showSidebar {
+  right: 0;
+}

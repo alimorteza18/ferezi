@@ -1,0 +1,19 @@
+.dotInActiveIcons {
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    display: block;
+    background-color: theme("colors.orange.default");
+    border-radius: 100%;
+    top: -10px;
+    opacity: 1;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+//   color: rgb(255, 0, 0);
+}

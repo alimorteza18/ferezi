@@ -1,0 +1,170 @@
+// @media screen and (min-width: 976px) {
+//   background: url("../../assets/images/backgrounds/background-tablet.webp");
+// }
+// temp
+// .login-container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   width: 280px;
+//   height: 562px;
+//   background-color: theme("colors.blue.default");
+//   background: url("../../assets/images/backgrounds/tray-phone-mode.webp");
+// @media screen and (min-width: 768px) {
+//   background-size: cover/contain;
+//   // width: 420px;
+//   // height: 320px;
+// }
+// }
+
+.login-logo {
+  width: 40%;
+  height: auto;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+form {
+  // width: 200px;
+  .login-input-box {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    background: #efefef;
+    height: 40px;
+    label {
+      color: #a6a8ab;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: normal;
+      position: absolute;
+      top: 9px;
+      transition: all 0.3s ease;
+      left: 5px;
+      // color: #ffffff;
+      [dir="rtl"] & {
+        left: unset;
+        right: 5px;
+      }
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 5px;
+      text-align: center;
+      background: inherit;
+
+      &::placeholder {
+        opacity: 0;
+      }
+
+      &:focus {
+        &::placeholder {
+          opacity: 1;
+        }
+        border: 1.5px solid #252525;
+        outline: 0;
+        // color: #ffffff;
+      }
+
+      &:focus,
+      &:not(:placeholder-shown),
+      &:-webkit-autofill {
+        & + label {
+          top: 0;
+          left: -5px;
+          padding: 0 3px 0 5px;
+          font-size: 12px;
+          transform: scale(0.75);
+          [dir="rtl"] & {
+            left: unset;
+            right: 0;
+          }
+        }
+      }
+    }
+    .show-hide-password-icon {
+      position: absolute;
+      right: 5px;
+      top: 10px;
+      width: 20px;
+      cursor: pointer;
+      [dir="rtl"] & {
+        right: unset;
+        left: 5px !important;
+      }
+    }
+    // apply internal-autofill-selected for saved password
+    input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+      transition: background-color 600000s 0s, color 600000s 0s;
+    }
+  }
+
+  // .login-input-box:nth-child(1) {
+  //   margin-top: 30px;
+  // }
+}
+
+// .login-button {
+//   margin-top: 35px;
+//   height: 35px;
+//   width: 240px;
+//   border: none;
+//   border-radius: 7px;
+//   background-color: #000000;
+//   color: #f1f1f1;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   &:hover {
+//     cursor: pointer;
+//   }
+//   &:focus {
+//     outline: none;
+//   }
+// }
+
+// .signup {
+//   color: #0a0a0a;
+//   margin-top: 10px;
+//   margin-bottom: 0;
+//   font-size: 14px;
+//   cursor: pointer;
+// }
+
+.wrong-login-message {
+  color: #ededed;
+  background-color: #ff000091;
+  border-radius: 10px;
+  padding: 2px 3px;
+  margin-top: 10px;
+  opacity: 0;
+  font-size: 14px;
+}
+
+.wrong-login-message-show {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  form {
+    width: 240px;
+  }
+}
+
+// .sign-up {
+// }
+
+.border-image {
+  background-image: url("../../assets/images/backgrounds/new-tray.png");
+  background-size: 100% 100%;
+  width: 90vw;
+  height: 90vh;
+}

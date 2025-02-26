@@ -1,0 +1,12 @@
+[
+  {
+    "itemName": "emailAddress",
+    "required": true,
+    "itemType": "text"
+  },
+  {
+    "itemName": "password",
+    "required": true,
+    "itemType": "text"
+  }
+]

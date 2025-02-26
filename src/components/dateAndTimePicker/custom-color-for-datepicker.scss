@@ -1,0 +1,104 @@
+:root {
+  // --rmdp-primary-orange: #3d9970;
+  // --rmdp-secondary-orange: #87ad92;
+  // --rmdp-shadow-orange: #87ad92;
+  // --rmdp-today-orange: #01ff70;
+  // --rmdp-hover-orange: #2ecc40;
+  // --rmdp-deselect-orange: #39795c;
+  // --rmdp-primary-orange: theme("colors.orange.900");
+  // --rmdp-secondary-orange: theme("colors.orange.800");
+  // --rmdp-shadow-orange: theme("colors.orange.700");
+  // --rmdp-today-orange: theme("colors.orange.300");
+  // --rmdp-hover-orange: theme("colors.orange.default");
+  // --rmdp-deselect-orange: theme("colors.orange.400");
+  --rmdp-primary-orange: #000000;
+  --rmdp-secondary-orange: #000000;
+  --rmdp-shadow-orange: #000000;
+  --rmdp-today-orange: #00000049;
+  --rmdp-hover-orange: #000000;
+  --rmdp-deselect-orange: #000000;
+}
+
+.orange .rmdp-wrapper {
+  border: 1px solid var(--rmdp-secondary-orange);
+}
+
+//  customized (box-shadow , background-color)
+.rmdp-wrapper {
+  box-shadow: 0 0 0 var(--rmdp-secondary-orange);
+  background-color: inherit !important;
+
+  .rmdp-day:not(.rmdp-day-hidden) span {
+    border-radius: 0;
+    margin: 1px;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+}
+
+.orange .rmdp-panel-body li {
+  background-color: var(--rmdp-primary-orange);
+  box-shadow: 0 0 2px var(--rmdp-secondary-orange);
+}
+
+.orange .rmdp-week-day {
+  color: var(--rmdp-primary-orange);
+}
+
+.orange .rmdp-day.rmdp-deactive {
+  color: var(--rmdp-secondary-orange);
+}
+
+.orange .rmdp-range {
+  background-color: var(--rmdp-primary-orange);
+  box-shadow: 0 0 3px var(--rmdp-shadow-orange);
+}
+
+.orange .rmdp-arrow {
+  border: solid #87cb44;
+  border-width: 0 2px 2px 0;
+}
+
+.orange .rmdp-arrow-container:hover {
+  background-color: var(--rmdp-primary-orange);
+  box-shadow: 0 0 3px var(--rmdp-secondary-orange);
+}
+
+.orange .rmdp-panel-body::-webkit-scrollbar-thumb {
+  background: var(--rmdp-primary-orange);
+}
+
+.orange .rmdp-day.rmdp-today span {
+  background-color: var(--rmdp-today-orange);
+}
+
+.orange .rmdp-rtl .rmdp-panel {
+  border-left: unset;
+  border-right: 1px solid var(--rmdp-secondary-orange);
+}
+
+.orange .rmdp-day.rmdp-selected span:not(.highlight) {
+  background-color: var(--rmdp-primary-orange);
+  box-shadow: 0 0 3px var(--rmdp-shadow-orange);
+}
+
+.orange .rmdp-day:not(.rmdp-day-hidden) span:hover {
+  background-color: var(--rmdp-hover-orange) !important;
+}
+
+.orange .b-deselect {
+  color: var(--rmdp-deselect-orange);
+  background-color: white;
+}
+
+.orange .rmdp-action-button {
+  color: var(--rmdp-primary-orange);
+}
+
+.orange .rmdp-button:not(.rmdp-action-button) {
+  background-color: var(--rmdp-primary-orange);
+}
+
+.orange .rmdp-button:not(.rmdp-action-button):hover {
+  background-color: var(--rmdp-deselect-orange);
+}

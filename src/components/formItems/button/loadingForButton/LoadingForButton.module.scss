@@ -1,0 +1,47 @@
+.buttonLoading {
+  display: inline-block;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  color: theme("colors.white.DEFAULT");
+  animation: buttonLoading 1s infinite linear alternate;
+  animation-delay: 0.5s;
+}
+.buttonLoading::before,
+.buttonLoading::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.buttonLoading::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: theme("colors.white.DEFAULT");
+  color: theme("colors.white.DEFAULT");
+  animation: buttonLoading 1s infinite alternate;
+  animation-delay: 0s;
+}
+.buttonLoading::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: theme("colors.white.DEFAULT");
+  color: theme("colors.white.DEFAULT");
+  animation: buttonLoading 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes buttonLoading {
+  0% {
+    background-color: theme("colors.white.DEFAULT");
+  }
+  50%,
+  100% {
+    background-color: #ffffff;
+  }
+}

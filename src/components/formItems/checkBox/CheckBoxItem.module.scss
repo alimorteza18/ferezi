@@ -1,0 +1,111 @@
+:root {
+  --size: 25;
+  --line-width: 1;
+  --check-green: #00aa1c;
+  --checkbox-grey: #4a7182;
+}
+
+.container {
+  display: inline-block;
+  position: relative;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   cursor: pointer;
+}
+
+/* hide default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox {
+  position: absolute;
+  top: 0;
+  height: calc(var(--size) * 1px);
+  width: calc(var(--size) * 1px);
+  cursor: pointer;
+  color: var(--checkbox-grey);
+  border: calc(var(--line-width) * 1px) solid;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  transform: translate(-50%, -50%);
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  width: calc(var(--size) * 1px);
+  height: calc(var(--size) * 1px);
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.checkmark::before {
+  position: absolute;
+  left: 0;
+  bottom: calc(var(--size) / 2.5 * 1px);
+  height: calc(var(--line-width) * 1px);
+  width: 0%;
+  background-color: var(--check-green);
+  content: "";
+  transform: translateX(0px) rotate(45deg);
+  transform-origin: left bottom;
+  opacity: 1;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  transition-delay: 0.5s;
+}
+
+.checkmark::after {
+  position: absolute;
+  left: calc(var(--size) / 4.3 * 1px);
+  bottom: calc(var(--size) / 23 * 1px);
+  height: calc(var(--line-width) * 1px);
+  width: 0%;
+  background-color: var(--check-green);
+  content: "";
+  transform: translateX(calc(var(--size) / 8 * 1px)) rotate(-45deg);
+  transform-origin: left bottom;
+  opacity: 1;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  transition-delay: 1s;
+}
+
+.container input:checked ~ .checkmark::before {
+  opacity: 1;
+  width: 50%;
+}
+
+.container input:checked ~ .checkmark::after {
+  opacity: 1;
+  width: 100%;
+}
+
+.container input:checked ~ .checkbox {
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.container input:not(:checked) ~ .checkmark::before {
+  transition-delay: 0.5s;
+}
+
+.container input:not(:checked) ~ .checkmark::after {
+  transition-delay: 0s;
+}
+
+.container input:not(:checked) ~ .checkbox {
+  transition-delay: 1s;
+}

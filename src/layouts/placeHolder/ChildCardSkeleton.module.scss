@@ -1,0 +1,79 @@
+.skeletonChildWrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 80px;
+  background-color: #ffffffbe;
+  display: flex;
+  flex-direction: column;
+}
+.skeleton {
+  background-color: #b9b9b959;
+  border-radius: 8px;
+}
+.skeletonImage {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.skeletonTitle {
+  width: 30%;
+  min-width: 90px;
+  height: 20px;
+  margin: 2px;
+}
+.skeletonText {
+  width: 20%;
+  min-width: 110px;
+  height: 16px;
+  margin-top: 4px;
+}
+.skeletonChildImage {
+  // aspect-ratio: 1 / 1;
+  height: 80px;
+  width: 80px;
+  border-radius: 8px;
+}
+.skeletonTime {
+  width: 30%;
+  min-width: 75px;
+  max-width: 130px;
+  height: 14px;
+  margin-top: 10px;
+}
+
+.shimmerWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  animation: loadingSkeleton 1.2s infinite;
+}
+.shimmer {
+  width: 50%;
+  height: 100%;
+  background-color: #ffffff8f;
+  transform: skewX(-20deg);
+  box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.05);
+}
+@keyframes loadingSkeleton {
+  0% {
+    transform: translateX(150%);
+  }
+  50% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+}
+.container:not(:last-child) {
+  .borderBottom {
+    margin: 16px 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e7e7e7;
+  }
+}

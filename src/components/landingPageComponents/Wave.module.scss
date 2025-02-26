@@ -1,0 +1,44 @@
+.waveContainer {
+  display: flex;
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+  .wave {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .hart {
+    position: absolute;
+    z-index: -1;
+    width: 70px;
+    height: auto;
+    top: 37px;
+    left: 20px;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    animation: hart 2.5s infinite;
+    @keyframes hart {
+      0% {
+        scale: 1;
+      }
+      60% {
+        scale: 1;
+      }
+      70% {
+        scale: 1.15;
+      }
+
+      80% {
+        scale: 1;
+      }
+      90% {
+        scale: 1.12;
+      }
+      100% {
+        scale: 1;
+      }
+    }
+  }
+}

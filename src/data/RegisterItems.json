@@ -1,0 +1,77 @@
+{
+  "company": [
+    {
+      "itemName": "Company Name",
+      "required": true,
+      "itemType": "text",
+      "id": "Company Name",
+      "placeHolder": "YumYum"
+    },
+    {
+      "itemName": "userName",
+      "required": true,
+      "itemType": "text",
+      "id": "userName",
+      "placeHolder": "test"
+    },
+    {
+      "itemName": "position",
+      "required": true,
+      "itemType": "text",
+      "id": "position",
+      "placeHolder": "manager"
+    },
+    {
+      "itemName": "mobileNumber",
+      "required": true,
+      "itemType": "text",
+      "id": "mobileNumber",
+      "placeHolder": "+13249191426"
+    },
+    {
+      "itemName": "emailAddress",
+      "required": true,
+      "itemType": "text",
+      "id": "emailAddress",
+      "placeHolder": "yumyum@gmail.com"
+    },
+    {
+      "itemName": "password",
+      "required": true,
+      "itemType": "password",
+      "id": "password",
+      "placeHolder": "Admin@1234"
+    }
+  ],
+  "person": [
+    {
+      "itemName": "userName",
+      "required": true,
+      "itemType": "text",
+      "id": "userName",
+      "placeHolder": "test"
+    },
+
+    {
+      "itemName": "mobileNumber",
+      "required": true,
+      "itemType": "text",
+      "id": "mobileNumber",
+      "placeHolder": "+13249191426"
+    },
+    {
+      "itemName": "emailAddress",
+      "required": true,
+      "itemType": "text",
+      "id": "emailAddress",
+      "placeHolder": "yumyum@gmail.com"
+    },
+    {
+      "itemName": "password",
+      "required": true,
+      "itemType": "text",
+      "id": "password",
+      "placeHolder": "Admin@1234"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+:root {
+  --label-input-width: 24px;
+}
+
+.SearchBoxContainer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  border-radius: 10px;
+  padding: 6px 13px;
+  background-color: #fff;
+  overflow: hidden;
+  .wrapper {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+    // border-radius: 10px;
+    overflow: hidden;
+    .magnifier {
+      //   position: absolute;
+      width: 20px;
+      height: auto;
+    }
+    // .labelInput {
+    //   position: absolute;
+    //   top: 50%;
+    //   transform: translate(-50%, -50%);
+    //   background-color: theme("colors.green.300");
+    //   width: var(--label-input-width);
+    //   height: 100%;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   &:lang(en) {
+    //     left: calc(var(--label-input-width) / 2);
+    //   }
+    //   &:lang(fa),
+    //   &:lang(ar) {
+    //     left: calc(100% - var(--label-input-width) / 2);
+    //   }
+    // }
+    .searchInput {
+      height: 100%;
+      width: 100%;
+      padding: 0 2px;
+      border-radius: inherit;
+      &:focus-visible {
+        outline: none;
+      }
+      &:focus-within {
+        border: 1px solid theme("colors.green.900");
+      }
+    }
+  }
+}

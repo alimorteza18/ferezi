@@ -1,0 +1,35 @@
+// @import "assets/styles/reboot.scss";
+@import "assets/styles/fonts.scss";
+@import "assets/styles/globalStyles.scss";
+// start tailwind styles
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+// end tailwind styles
+
+html {
+  &:lang(en) {
+    font-family: "Inter" !important;
+  }
+  &:lang(ar) {
+    font-family: "yekanbakhAr" !important;
+  }
+  &:lang(fa) {
+    font-family: "yekanbakhFaNum" !important;
+    font-variation-settings: "dots" 1;
+  }
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  // .custom-class {
+  //   background-color: theme("colors.blue.default");
+  // }
+}
+
+.leaflet-control-attribution {
+  display: none !important;
+}
+.leaflet-container {
+  z-index: 3 !important;
+}

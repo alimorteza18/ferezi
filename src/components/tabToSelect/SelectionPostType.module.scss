@@ -1,0 +1,37 @@
+.postType {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  background: #fff3d8;
+  transition: color ease 0.3s;
+  .postTypeItem {
+    width: fit-content;
+    padding: 4px 8px;
+    height: 100%;
+    width: 50%;
+    color: #908f99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .selectedItemBackground {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: #fbbb23;
+    color: #000000;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  .selected {
+    color: #000000;
+  }
+}

@@ -1,0 +1,329 @@
+// 100	Thin (Hairline)
+// 200	Extra Light (Ultra Light)
+// 300	Light
+// 400	Normal (Regular)
+// 500	Medium
+// 600	Semi Bold (Demi Bold)
+// 700	Bold
+// 800	Extra Bold (Ultra Bold)
+// 900	Black (Heavy)
+// 950	Extra Black (Ultra Black)
+
+// === start inter english font ===
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-Thin.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-Thin.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-ThinItalic.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-ThinItalic.woff?v=3.19") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-ExtraLight.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-ExtraLight.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-ExtraLightItalic.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-ExtraLightItalic.woff?v=3.19") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-Light.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-Light.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-LightItalic.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-LightItalic.woff?v=3.19") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-Regular.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-Regular.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-Italic.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-Italic.woff?v=3.19") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-Medium.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-Medium.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-MediumItalic.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-MediumItalic.woff?v=3.19") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-SemiBold.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-SemiBold.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-SemiBoldItalic.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-SemiBoldItalic.woff?v=3.19") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-Bold.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-Bold.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-BoldItalic.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-BoldItalic.woff?v=3.19") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-ExtraBold.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-ExtraBold.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-ExtraBoldItalic.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-ExtraBoldItalic.woff?v=3.19") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-Black.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-Black.woff?v=3.19") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/Inter-Web_2/Inter-BlackItalic.woff2?v=3.19") format("woff2"),
+    url("../fonts/Inter-Web_2/Inter-BlackItalic.woff?v=3.19") format("woff");
+}
+// === end of inter English font ===
+
+// --- start farsi font with farsi number ---
+
+@font-face {
+  font-family: "yekanbakhFaNum";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff/YekanBakhFaNum-ExtraBlack.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff2/YekanBakhFaNum-ExtraBlack.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhFaNum";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff/YekanBakhFaNum-Light.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff2/YekanBakhFaNum-Light.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhFaNum";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff/YekanBakhFaNum-Regular.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff2/YekanBakhFaNum-Regular.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhFaNum";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff/YekanBakhFaNum-SemiBold.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff2/YekanBakhFaNum-SemiBold.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhFaNum";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff/YekanBakhFaNum-Bold.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff2/YekanBakhFaNum-Bold.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhFaNum";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff/YekanBakhFaNum-ExtraBold.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff2/YekanBakhFaNum-ExtraBold.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhFaNum";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff/YekanBakhFaNum-Black.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff2/YekanBakhFaNum-Black.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhFaNum";
+  font-style: normal;
+  font-weight: 950;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff/YekanBakhFaNum-ExtraBlack.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-FaNum/woff2/YekanBakhFaNum-ExtraBlack.woff2")
+      format("woff2");
+}
+// --- end of farsi font with farsi number ---
+// --- start arabic font ---
+@font-face {
+  font-family: "yekanbakhAr";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff/YekanBakh-Thin.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff2/YekanBakh-Thin.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhAr";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff/YekanBakh-Light.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff2/YekanBakh-Light.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhAr";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff/YekanBakh-Regular.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff2/YekanBakh-Regular.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhAr";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff/YekanBakh-SemiBold.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff2/YekanBakh-SemiBold.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhAr";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff/YekanBakh-Bold.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff2/YekanBakh-Bold.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhAr";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff/YekanBakh-ExtraBold.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff2/YekanBakh-ExtraBold.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhAr";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff/YekanBakh-Black.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff2/YekanBakh-Black.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "yekanbakhAr";
+  font-style: normal;
+  font-weight: 950;
+  src: url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff/YekanBakh-ExtraBlack.woff")
+      format("woff"),
+    url("../fonts/YekanBakh2-2-Pro/Yekan-Bakh-Family/woff2/YekanBakh-ExtraBold.woff2")
+      format("woff2");
+}
+// --- end of arabic font ---

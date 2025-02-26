@@ -1,0 +1,20 @@
+.main-wrapper {
+  // background-image: url("../../assets/images/backgrounds/background-tablet.webp");
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bg-image-general {
+  background-image: url("../../assets/images/backgrounds/new-backround.png");
+}
+.bg-image-Primary {
+  background-image: url("../../assets/images/landing/landing-background.png");
+}
+// rotate in landscape display
+// .background-in-landscape {
+//   @media (orientation: landscape) {
+//     background-image: url("../../assets/images/backgrounds/background-tablet-landscape.webp");
+//     background-image: url("../../assets/images/backgrounds/background-tablet-landscape.webp");
+//   }
+// }

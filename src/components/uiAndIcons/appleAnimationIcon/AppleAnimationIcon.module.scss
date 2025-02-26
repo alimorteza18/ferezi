@@ -1,0 +1,60 @@
+.appleIconContainer {
+    position: relative;
+    width: 120px;
+    height: 100px;
+    margin-top: -30px;
+  }
+  .leaf {
+    position: absolute;
+    width: 36px;
+    height: auto;
+    left: 25px;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .fingerSign1 {
+    position: absolute;
+    left: 20px;
+    top: 27px;
+  
+    animation: fingerSign1animation ease 4s;
+  
+    @keyframes fingerSign1animation {
+      0% {
+        opacity: 0;
+      }
+      30% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+  .fingerSign2 {
+    position: absolute;
+    left: 49px;
+    top: 27px;
+  
+    animation: fingerSign2animation ease 4s;
+  
+    @keyframes fingerSign2animation {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0;
+      }
+      60% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }

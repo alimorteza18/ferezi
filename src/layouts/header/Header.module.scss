@@ -1,0 +1,63 @@
+.header {
+  background-color: #ffffff;
+  // background-color: #ffffff;
+  width: 100%;
+  // border-radius: 0 0 1rem 1rem;
+  //   direction: ltr;
+  backdrop-filter: blur(2px);
+  position: relative;
+}
+
+.backContainer {
+  background-color: #fafafa80;
+  color: theme("colors.green.800");
+  width: 40px;
+  height: 35px;
+  margin: 0 8px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.back {
+  width: 30px;
+  height: auto;
+}
+.logoContainer,
+.profileContainer {
+  height: theme("height.header");
+  margin: 0 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profileContainer {
+  width: fit-content;
+}
+
+.profileContainer {
+  width: theme("height.header");
+}
+.logo {
+  width: auto;
+  height: auto;
+  max-height: calc(theme("height.header") - 8px);
+  cursor: pointer;
+}
+
+.profile {
+  width: calc(theme("height.header") - 10px);
+  height: auto;
+  cursor: pointer;
+}
+
+.logoOrange {
+  position: absolute;
+  top: 23px;
+  left: calc(50% - 35px);
+  img {
+    width: 70px;
+    height: 70px;
+  }
+}

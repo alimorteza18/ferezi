@@ -1,0 +1,10 @@
+.select {
+  width: 90%;
+  background-color: theme("colors.green.400");
+  border-radius: 7px;
+  height: 27px;
+  option {
+    width: 100%;
+    background-color:theme("colors.green.100");
+  }
+}

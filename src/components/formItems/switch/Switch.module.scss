@@ -1,0 +1,151 @@
+$brand-success: theme("colors.orange.default");
+$loader-size: 1.4em;
+$check-height: $loader-size/1.7;
+$check-width: $check-height/2;
+$check-left: ($loader-size/6 + $loader-size/30);
+$check-thickness: 3px;
+$check-color: $brand-success;
+
+.circleLoader {
+  margin-bottom: $loader-size/2;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-left-color: $check-color;
+  animation: loader-spin 1.2s infinite linear;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  width: $loader-size;
+  height: $loader-size;
+  cursor: pointer;
+}
+
+.loadComplete {
+  -webkit-animation: none;
+  animation: none;
+  border-color: $check-color;
+  transition: border 500ms ease-out;
+}
+
+.checkmark {
+  // display: none;
+  
+  &.draw:after {
+    animation-duration: 800ms;
+    animation-timing-function: ease;
+    animation-name: checkmark;
+    transform: scaleX(-1) rotate(135deg);
+  }
+  
+  &:after {
+    opacity: 1;
+    height: $check-height;
+    width: $check-width;
+    transform-origin: left top;
+    border-right: $check-thickness solid $check-color;
+    border-top: $check-thickness solid $check-color;
+    content: '';
+    left: $check-left;
+    top: $check-height;
+    position: absolute;
+  }
+}
+
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: $check-width;
+    opacity: 1;
+  }
+  40% {
+    height: $check-height;
+    width: $check-width;
+    opacity: 1;
+  }
+  100% {
+    height: $check-height;
+    width: $check-width;
+    opacity: 1;
+  }
+}
+
+/* ***** start checkBox input animation *****/
+// round slider
+// .switch {
+//     position: relative;
+//     display: inline-block;
+//     width: 36px;
+//     height: 18px;
+//   }
+  
+//   .switch input {
+//     opacity: 0;
+//     width: 0;
+//     height: 0;
+//   }
+  
+//   .slider {
+//     position: absolute;
+//     cursor: pointer;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background-color: theme("colors.green.300");
+//     transition: 0.4s;
+//   }
+  
+//   .slider:before {
+//     position: absolute;
+//     content: "";
+//     height: 19px;
+//     width: 19px;
+//     left: 0px;
+//     bottom: 0px;
+//     background-color: theme("colors.green.default");
+//     transition: 0.4s;
+//   }
+  
+//   input:checked + .slider {
+//     background-color: theme("colors.green.default");
+//     // background-color: #2196F3;
+//   }
+  
+//   input:checked + .slider::before {
+//     background-color: theme("colors.green.300");
+//   }
+  
+//   input:focus + .slider {
+//     // box-shadow: 0 0 1px #2196F3;
+//     box-shadow: 0 0 1px theme("colors.green.default");
+//   }
+  
+//   input:checked + .slider:before {
+//     transform: translateX(18px);
+//   }
+  
+//   /* Rounded sliders */
+//   .slider.round {
+//     border-radius: 34px;
+//   }
+  
+//   .slider.round:before {
+//     border-radius: 50%;
+//   }
+  
+  /* ***** end checkBox input animation *****/
+  

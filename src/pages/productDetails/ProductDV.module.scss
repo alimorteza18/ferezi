@@ -1,0 +1,59 @@
+.container {
+  //   background-color: red;
+  width: 70px;
+  height: 90px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .circleShapeWrap {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .circleShape {
+    // background-color: inherit;
+    background-color: theme("colors.green.100");
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    z-index: 10;
+    position: relative;
+
+    &::after,
+    &::before {
+      position: absolute;
+      background-color: inherit;
+      border-radius: inherit;
+      content: "";
+      width: inherit;
+      height: inherit;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+    &::before {
+      top: 45px;
+    }
+    &::after {
+      top: -40px;
+    }
+  }
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-bottom: 1px dashed blue;
+}
+
+.dv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,22 @@
+.trayBackground {
+  position: relative;
+  width: calc(100% - calc(20px + 2vw));
+  // footer(footermenu) height = 60px
+  height: calc(100% - calc(theme("height.footerMenu") + theme("height.header") + 0.5vh + 10px + 45px));
+  // margin-top: calc(0.25vh + 5px);
+  margin-top: calc(45px);
+  background-image: url("../../assets/images/backgrounds/new-tray.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trayStyle {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 90%;
+  height: calc(90% + 2vh);
+  padding: 20px;
+}

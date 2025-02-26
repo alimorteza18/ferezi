@@ -1,0 +1,38 @@
+.no-connection-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .no-connection-image-container {
+        background-color: #f5f9ffa8;
+        border-radius: 15px;
+
+    }
+
+    .no-connection-image {
+        max-width: 100%;
+        height: auto;
+        max-height: 50vh;
+        width: auto;
+        position: relative;
+    }
+
+    .no-connection-text-container {
+        position: absolute;
+        top: 5%;
+        left: 15%;
+        width: 120px;
+        height: 100px;
+        background-color: aliceblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fd4848;
+        font-size: 16px;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 16px;
+    }
+}

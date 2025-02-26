@@ -1,0 +1,50 @@
+.rateContainer {
+  display: flex;
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+  .frouts {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+  }
+  .rate {
+    position: absolute;
+    width: 52px;
+    height: auto;
+    top: 45px;
+    left: 15px;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    rotate: 0deg;
+    animation: hart 5s infinite;
+    @keyframes hart {
+      0% {
+        rotate: 0;
+      }
+      60% {
+        rotate: 0deg;
+        left: 15px;
+        top: 45px;
+      }
+      65% {
+        // rotate: 5deg;
+        // left: 25px;
+        // top: 45px;
+        rotate: 20deg;
+        left: 49px;
+        top: 53px;
+      }
+      100% {
+        // rotate: 5deg;
+        // left: 25px;
+        // top: 45px;
+        rotate: 20deg;
+        left: 49px;
+        top: 53px;
+      }
+    }
+  }
+}

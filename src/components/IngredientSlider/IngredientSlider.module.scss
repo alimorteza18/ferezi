@@ -1,0 +1,23 @@
+.caloriesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 84px;
+  border: 1px solid theme("colors.green.700");
+  border-radius: 12px;
+  background-color: theme("colors.white.backGround");
+  .ingredienSpecification {
+    font-size: 10px;
+    background-color: theme("colors.green.300");
+    border-radius: 12px 12px 0 0;
+    padding: 2px 4px;
+    span {
+      margin: 1px;
+    }
+  }
+  img {
+    width: 40px;
+    margin: 4px 0;
+  }
+}

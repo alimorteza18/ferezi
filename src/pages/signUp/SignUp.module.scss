@@ -1,0 +1,25 @@
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 60px 20px 20px;
+
+  .inputNumber {
+    background-color: #efefef;
+    border-radius: 10px;
+    width: 280px;
+    height: 48px;
+    padding-left: 15px;
+  }
+
+  .signupButton {
+    background-color: #fbbb23;
+    border-radius: 10px;
+    width: 280px;
+    height: 48px;
+    margin-top: 17px;
+  }
+}

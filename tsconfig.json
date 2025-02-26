@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "*": ["src/*"],
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"],
+      "config/*": ["config/*"],
+      "data/*": ["data/*"],
+      "layouts/*": ["layouts/*"],
+      "middleware/*": ["middleware/*"],
+      "pages/*": ["pages/*"],
+      "routes/*": ["routes/*"],
+      "utils/*": ["utils/*"],
+      "fonts/*": ["fonts/*"],
+      "locales/*": ["locales/*"],
+      "types/*": ["types/*"],
+      "functions/*": ["functions/*"],
+      "context/*": ["context/*"]
+    },
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src", "pages", "node_modules/react-i18next"]
+  // "exclude": ["node_modules", "build"]
+}
