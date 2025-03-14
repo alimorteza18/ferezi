@@ -10,7 +10,7 @@ import SidebarMenu from "layouts/sidebarMenu/SidebarMenu";
 import { useState } from "react";
 const Header = () => {
   const RouteIsHome = useCurrentRoute() === "/";
-  const hideHeader = ["/login", "/sign-up", "/landing"];
+  const hideHeader = ["/login", "/sign-up", "/landing", "/confirm-email", "/email-verified", "/reset-password"];
   const navigate = useNavigate();
 
   const [showSidebar, setShowSidebar] = useState(false);
@@ -30,9 +30,9 @@ const Header = () => {
       <div
         className={`${classes.header}
         
-        rtl w-100 h-header flex flex-row items-center justify-between relative`}
+        rtl h-header flex flex-row items-center justify-between rounded-b-xl bg-white bg-opacity-75 backdrop-blur-lg px-4`}
       >
-        <SelectLang />
+        {/* <SelectLang /> */}
         {/* === if route is "/" show profile button and show header in rtl mode else show back and in ltr mode */}
         {/* {RouteIsHome ? ( */}
         {/* <div className={classes.profileContainer}>
@@ -40,18 +40,18 @@ const Header = () => {
           </div>
         ) : ( */}
         {/* )} */}
-        <div className={classes.logoOrange} onClick={() => navigate("/")}>
+        {/* <div className={classes.logoOrange} onClick={() => navigate("/")}>
           <img src={logoOrange} alt="#" />
-        </div>
+        </div> */}
         <div
           className={classes.logoContainer}
           onClick={() => setShowSidebar(true)}
         >
           <img src={dots} alt="#" className={classes.logo} />
         </div>
-        <div onClick={backHandler} className={classes.backContainer}>
+        <div>
           {/* <LeftArrow className={classes.back} /> */}
-          <img src={back} className={classes.back} />
+          <img src="./logo.svg" />
         </div>
       </div>
       <SidebarMenu showSidebar={showSidebar} setShowSidebar={setShowSidebar} />

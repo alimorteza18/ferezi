@@ -11,6 +11,7 @@ const SelectChild = ({
   selectedChild,
   setSelectedChild,
   setShowAddChildForm,
+  setChildId,
 }) => {
   const [showChilrenList, setShowChilrenList] = useState(false);
   const { t } = useTranslation();
@@ -26,7 +27,7 @@ const SelectChild = ({
           {selectedChild ? (
             <div className="flex flex-row items-center gap-[6px]">
               <img src={Child} className="w-6 h-6" />
-              {selectedChild?.name}
+              {selectedChild?.first_name}
             </div>
           ) : (
             t("selectChild")
@@ -43,12 +44,16 @@ const SelectChild = ({
                 className={`${classes.childItem} ${
                   child.id === selectedChild?.id ? classes.activeItem : ""
                 }`}
-                onClick={() => setSelectedChild(child)}
+                onClick={() => {
+                  setSelectedChild(child);
+                  setChildId(child.id);
+                }}
+                
               >
                 <span>
                   <img src={Child} className="w-6 h-6" />
                 </span>
-                <span>{child?.name}</span>
+                <span>{child?.first_name}</span>
               </div>
             );
           })}

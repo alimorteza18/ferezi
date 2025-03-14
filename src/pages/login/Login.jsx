@@ -134,6 +134,11 @@ const Login = () => {
             />
           </form>
           <div className="flex flex-row w-full justify-center mt-5 text-[14px]">
+            <Link className="mx-1 underline" to="/reset-password">
+              Forget Password!
+            </Link>
+          </div>
+          <div className="flex flex-row w-full justify-center mt-2 text-[14px]">
             <p className="">{t("If you are new?")}</p>
             <Link className="mx-1 underline" to="/sign-up">
               {t("create now")}

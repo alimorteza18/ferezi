@@ -17,16 +17,4 @@
   .img {
     display: block;
   }
-  .imgColored {
-    display: none;
-  }
-  &:hover {
-    background-color: theme("colors.pink.default");
-    .img {
-      display: none;
-    }
-    .imgColored {
-      display: block;
-    }
-  }
 }

@@ -1,28 +1,13 @@
 .header {
-  background-color: #ffffff;
   // background-color: #ffffff;
   width: 100%;
   // border-radius: 0 0 1rem 1rem;
   //   direction: ltr;
-  backdrop-filter: blur(2px);
-  position: relative;
 }
 
-.backContainer {
-  background-color: #fafafa80;
-  color: theme("colors.green.800");
-  width: 40px;
-  height: 35px;
-  margin: 0 8px;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
 .back {
-  width: 30px;
-  height: auto;
+  width: 60px;
+  height: 20px;
 }
 .logoContainer,
 .profileContainer {
@@ -40,8 +25,8 @@
   width: theme("height.header");
 }
 .logo {
-  width: auto;
-  height: auto;
+  width: 5px;
+  height: 25px;
   max-height: calc(theme("height.header") - 8px);
   cursor: pointer;
 }

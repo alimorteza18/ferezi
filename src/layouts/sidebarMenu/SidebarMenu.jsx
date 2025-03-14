@@ -22,8 +22,8 @@ const SidebarMenu = ({ showSidebar, setShowSidebar }) => {
 
   const getUserName = () => {
     console.log("geted");
-    const userName = localStorage.getItem("username");
-    const fullName = localStorage.getItem("fullname");
+    const userName = localStorage.getItem("email");
+    const fullName = localStorage.getItem("email");
     setUserName(userName || fullName);
   };
 

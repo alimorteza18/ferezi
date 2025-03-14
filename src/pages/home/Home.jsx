@@ -38,18 +38,16 @@ const Home = () => {
           {t("Select your order type")}
         </h2>
         <div className="w-full all-center flex-col">
-          <HomeItemSelection
-            img={event}
-            imgColored={eventColored}
-            name={t("Event")}
-            // to="/order/select-date?order=event"
-            to=""
-          />
-          <HomeItemSelection
+        <HomeItemSelection
             img={school}
-            imgColored={schoolColored}
             name={t("School")}
             to="/order/select-date?order=school"
+          />
+          <HomeItemSelection
+            img={event}
+            name={t("Home")}
+            // to="/order/select-date?order=event"
+             to="/order/select-date?order=event"
           />
         </div>
       </div>

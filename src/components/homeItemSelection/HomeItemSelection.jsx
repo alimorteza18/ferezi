@@ -16,10 +16,13 @@ const HomeItemSelection = (props) => {
         onClickHandler();
       }}
     >
-      <div className="all-center flex-col">
+      <div className="flex justify-center items-center space-x-4">
         <img src={props.img} className={classes.img} alt="" />
-        <img src={props.imgColored} className={classes.imgColored} alt="" />
-        <h2 >{props.name}</h2>
+        <img src="./line.svg" alt="" />
+        <div>
+          <h2 >{props.name}</h2>
+          <h2 >Pack</h2>
+        </div>
       </div>
     </div>
   );

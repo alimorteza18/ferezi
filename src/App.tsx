@@ -6,18 +6,21 @@ import { TemporaryCartContextProvider } from "context/TemporaryCartContext";
 import { CartContextProvider } from "context/CartContext";
 import { ReactNotifications } from "react-notifications-component";
 import 'react-notifications-component/dist/theme.css'
+import { Router } from "react-router-dom";
 
 const App = () => {
   return (
+
     <I18nextProvider i18n={i18n}>
       <CartContextProvider>
         <TemporaryCartContextProvider>
           {/* <SelectLang /> */}
           <ReactNotifications />
-          <ProjectRoutes />
+            <ProjectRoutes />
         </TemporaryCartContextProvider>
       </CartContextProvider>
     </I18nextProvider>
+
   );
 };
 

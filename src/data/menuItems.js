@@ -9,20 +9,21 @@ import child from "assets/icons/footer/child.svg";
 import condition from "assets/icons/footer/paper.png";
 import help from "assets/icons/footer/info.png";
 const menuItems = [
-  {
-    id: 0,
-    itemName: "home",
-    ItemIcon: home,
-    link: "/",
-    width: "22px",
-    hight: "20px",
-  },
+
   {
     id: 1,
     itemName: "cart",
     ItemIcon: cart,
     link: "/cart",
     width: "23px",
+    hight: "20px",
+  },
+  {
+    id: 0,
+    itemName: "home",
+    ItemIcon: home,
+    link: "/",
+    width: "22px",
     hight: "20px",
   },
   {

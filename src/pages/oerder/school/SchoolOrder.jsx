@@ -41,11 +41,14 @@ const SchoolOrder = () => {
   const { temporaryCart, setTemporaryCart } = useTemporaryCartContext();
   // const { cart, setCart } = useCartContext();
   const [deliveryDate, setDeliveryDate] = useState(defaultDeliveryDate || null);
-  const [selectedChildFTEE, setSelectedChildFTEE] = useState(null);
+  const [selectedChildFTEE, setSelectedChildFTEE] = useState();
   const [showAddChildForm, setShowAddChildForm] = useState(false);
   const [children, setChildren] = useState([]);
   const [packData, setPackData] = useState();
   const [cart, setCart] = useState([]);
+  const [cl, setCl] = useState();
+  const [childId, setChildId] = useState();
+
 
   const isoDateWithOffset = convertToISOWithOffset(deliveryDate);
 
@@ -53,7 +56,7 @@ const SchoolOrder = () => {
   const getAllchildList = () => {
     Axios.get("/account/children/")
       .then((res) => {
-        const childrenList = res.data;
+        const childrenList = res.data.children;
         setChildren(childrenList);
       })
       .catch((err) => {
@@ -62,17 +65,19 @@ const SchoolOrder = () => {
   };
 
   const sendCartToApi = () => {
-    Axios.post("order/cart/", { packs: cart })
-    .then(response => {
-      console.log("Sepet gönderildi:", response.data);
-      navigate("/cart");
+    Axios.post(`order/cart/`, {
+      packs: cart.packs,
     })
-    .catch(error => console.error("Sepet gönderilirken hata oluştu:", error));
+      .then(response => {
+        console.log("Sepet gönderildi:", response.data);
+        navigate("/cart");
+      })
+      .catch(error => console.error("Sepet gönderilirken hata oluştu:", error));
   };
   const getProductList = () => {
     //  -&-&-&- darsad telerance be surat pishfarz -&-&-&-
     Axios.get(
-      `/product/packs/?page=1`
+      `/product/packs/?child=${childId ? childId : 2}&child_calorie=${selectedChildFTEE ? selectedChildFTEE : 400}&date=${isoDateWithOffset}&page=1`
     )
       .then((res) => {
         setPackData(res.data.results);
@@ -83,7 +88,12 @@ const SchoolOrder = () => {
   useEffect(() => {
     getAllchildList();
     getProductList();
-  }, [showAddChildForm]);
+    console.log(childId, 'SSSSSSSSSSS')
+  }, [showAddChildForm, childId]);
+
+  useEffect(() => {
+    getProductList();
+  }, [selectedChildFTEE]);
 
   useEffect(() => {
     getProductList();
@@ -135,11 +145,11 @@ const SchoolOrder = () => {
   console.log("PACK", packData)
   return (
     <div className="w-full flex flex-col">
-      {/* <OrderTypeAndDeliveryDate
+      <OrderTypeAndDeliveryDate
         deliveryDate={deliveryDate}
         setDeliveryDate={setDeliveryDate}
         orderType={t("school")}
-      /> */}
+      />
       {deliveryDate === null ? null : (
         <>
           <div className="flex flex-col mt-3">
@@ -148,9 +158,17 @@ const SchoolOrder = () => {
               setSelectedChild={setSelectedChild}
               selectedChild={selectedChild}
               setShowAddChildForm={setShowAddChildForm}
+              childId={childId}
+              setChildId={setChildId}
             />
             {selectedChildFTEE && (
-              <div className="flex flex-col text-xs px-2 my-3 py-1 bg-[#87CB44] rounded-md">
+              <div className={`flex flex-col text-xs px-2 my-3 py-1 ${cl + 10 > selectedChildFTEE ? 'bg-[#FF6D3E]' : cl + 10 < selectedChildFTEE ? 'bg-[#FFDD8C]' : 'bg-[#87CB44]'} rounded-md`}>
+                <div>
+                  <div className="flex flex-row">
+                    <span>Total Value</span>:
+                    <span className="mx-1 font-bold">{cl}</span>
+                  </div>
+                </div>
                 <div className="flex flex-row">
                   <span>{t("dailyValue")}</span>:
                   <span className="mx-1">{selectedChildFTEE}</span>
@@ -170,11 +188,11 @@ const SchoolOrder = () => {
                   toggleSwitchHandler={setSportCheckBox}
                   name={t("sport")}
                 />
-                <SwitchItem
+                {/* <SwitchItem
                   switchStatus={noBreakfastCheckBox}
                   toggleSwitchHandler={setNoBreakfastCheckBox}
                   name={t("no breakfast")}
-                />
+                /> */}
               </div>
             ) : null}
           </div>
@@ -192,17 +210,20 @@ const SchoolOrder = () => {
                 />
               </div> */}
 
-              <div className="w-full h-full mt-5 flex flex-col gap-3">
+              <div className="w-full h-full flex flex-col gap-3 mt-6">
                 {itemTypes === "custom" ? (
                   <>
                     {packData.map((pack, index) => {
                       return (
                         <PackCard
-                          key={pack.slug}
+                          key={index}
                           pack={pack}
                           cart={cart}
                           setCart={setCart}
                           selectedChildFTEE={selectedChildFTEE}
+                          setCl={setCl}
+                          childId={childId}
+                          cl={cl}
 
                         />
                       );
@@ -226,7 +247,7 @@ const SchoolOrder = () => {
               <div className="w-full all-center my-4 ">
                 <button
                   onClick={sendCartToApi}
-                  className="bg-[#FFB300] w-full rounded-lg block px-6 py-2"
+                  className="bg-[#FFB300] w-full rounded-lg block px-6 py-2 "
                 >
                   {t("continue")}
                 </button>

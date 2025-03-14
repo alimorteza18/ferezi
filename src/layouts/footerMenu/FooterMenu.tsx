@@ -4,7 +4,7 @@ import classes from "./FooterMenu.module.scss";
 import useCurrentRoute from "functions/useCurrentRoute ";
 const FooterMenu = () => {
   // hide footer in this routes
-  const hideFooter = ["/login", "/sign-up", "/landing"];
+  const hideFooter = ["/login", "/sign-up", "/landing", "/confirm-email", "/email-verified", "/reset-password"];
   return hideFooter.includes(useCurrentRoute()) ? null : (
     <div className="w-full h-footerMenu bg-[#ffffff] backdrop-blur-[2px] absolute bottom-0 rounded-t-2xl">
       <ul className="h-full w-full flex flex-row justify-evenly items-center rtl:flex-row-reverse">

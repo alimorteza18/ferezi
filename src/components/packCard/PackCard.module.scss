@@ -46,34 +46,26 @@
     
   }
   .max{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 11%;
     position: relative;
-    left: 0;
-    right: 0;
     height: 85%;
-    width: 100%;
-    padding:12%;
-    max-height:120px;
+    width: 80%;
+    max-height:140px;
     overflow-y: auto;
   }
   
 }
 
 .contentNames {
-  padding: 12px 18px;
+  padding-left: 8px;
   color: #393939;
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 600;
   line-height: normal;
   direction: ltr;
   height: auto;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
-  margin-top: 8px;
   margin-bottom: 8px;
 }
 

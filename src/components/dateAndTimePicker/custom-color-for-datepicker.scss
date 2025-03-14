@@ -55,7 +55,7 @@
 }
 
 .orange .rmdp-arrow {
-  border: solid #87cb44;
+  border: solid #FFB300;
   border-width: 0 2px 2px 0;
 }
 
@@ -102,3 +102,42 @@
 .orange .rmdp-button:not(.rmdp-action-button):hover {
   background-color: var(--rmdp-deselect-orange);
 }
+
+.rmdp-container {
+  font-size: 16px !important;
+}
+
+.rmdp-day {
+  width: 40px !important;
+  height: 40px !important;
+  font-size: 18px !important; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+
+.rmdp-week-day {
+  font-size: 16px !important; 
+  margin-top: 12px;
+}
+
+.rmdp-arrow {
+  width: 20px !important;
+  height: 20px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+
+.rmdp-arrow-container {
+  &:hover,
+  &:focus,
+  &:active {
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+

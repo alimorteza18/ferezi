@@ -29,7 +29,7 @@ const DatePickerModalComponent = ({
   const [datePickerOptions, setDatePickerOptions] = useState({
     calendar: gregorian,
     locale: gregorian_en,
-    format: "MM/DD/YYYY HH:mm",
+    format: "MM/DD/YYYY",
   });
 
   const datePickerOptionsHandler = () => {
@@ -37,19 +37,19 @@ const DatePickerModalComponent = ({
       setDatePickerOptions({
         calendar: persian,
         locale: persian_fa,
-        format: "YYYY/MM/DD HH:mm",
+        format: "YYYY/MM/DD",
       });
     } else if (lang === "ar") {
       setDatePickerOptions({
         calendar: arabic,
         locale: arabic_ar,
-        format: "YYYY/MM/DD HH:mm",
+        format: "YYYY/MM/DD",
       });
     } else {
       setDatePickerOptions({
         calendar: gregorian,
         locale: gregorian_en,
-        format: "MM/DD/YYYY HH:mm",
+        format: "YYYY/MM/DD",
       });
     }
   };

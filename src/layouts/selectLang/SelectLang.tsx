@@ -28,20 +28,20 @@ const SelectLang = () => {
   const [showLnagOptions, setShowLangOptions] = useState(false);
   const { i18n } = useTranslation();
   const languages = [
-    {
-      id: 0,
-      name: "فارسی",
-      tag: "fa",
-      title: "فِرِزی | غذای سالم",
-      description: "",
-    },
-    {
-      id: 1,
-      name: "العربية",
-      tag: "ar",
-      title: "فِرِزی | الطعام الصحي",
-      description: "",
-    },
+    // {
+    //   id: 0,
+    //   name: "فارسی",
+    //   tag: "fa",
+    //   title: "فِرِزی | غذای سالم",
+    //   description: "",
+    // },
+    // {
+    //   id: 1,
+    //   name: "العربية",
+    //   tag: "ar",
+    //   title: "فِرِزی | الطعام الصحي",
+    //   description: "",
+    // },
     {
       id: 2,
       name: "English",

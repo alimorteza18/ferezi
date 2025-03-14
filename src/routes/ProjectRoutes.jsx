@@ -1,32 +1,4 @@
-// import * as React from "react";
-// import * as ReactDOM from "react-dom";
-// import {
-//   createBrowserRouter,
-//   RouterProvider,
-// } from "react-router-dom";
-
-// import Root, { rootLoader } from "./routes/root";
-// import Team, { teamLoader } from "./routes/team";
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Root />,
-//     loader: rootLoader,
-//     children: [
-//       {
-//         path: "team",
-//         element: <Team />,
-//         loader: teamLoader,
-//       },
-//     ],
-//   },
-// ]);
-
-// ReactDOM.createRoot(document.getElementById("root")).render(
-//   <RouterProvider router={router} />
-// );
-
+import React, { useEffect } from "react";
 import AddAddress from "components/address/AddAddress";
 import OrdersList from "pages/OrdersList/OrdersList";
 import SelectPaymentMethod from "pages/SelectPaymentMethod";
@@ -51,26 +23,52 @@ import {
   Route,
   BrowserRouter as Router,
   Routes,
+  useNavigate,
 } from "react-router-dom";
 import PageLayout from "./PageLayout";
 import FAQ from "pages/FAQ/FAQ";
 import NotFound from "pages/errors/notFound/NotFound";
 import CartFinish from "pages/cartFinish/CartFinish";
+import ConfirmEmail from "pages/confirmEmail/ConfirmEmail";
+import EmailVerified from "pages/emailVerified/EmailVerified";
+import ResetPassword from "pages/resetPassword/ResetPassword";
+
+// AuthWrapper: Token kontrolü yapar ve yönlendirme yapar
+const AuthWrapper = ({ children }) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const allowedPaths = ["/login", "/sign-up", "/landing", "/confirm-email", "/email-verified"]; // Token kontrolü yapılmayacak sayfalar
+    if (!token && !allowedPaths.includes(window.location.pathname)) {
+      navigate("/landing");
+    }
+  }, [navigate]);
+
+  return children;
+};
 
 const ProjectRoutes = () => {
   return (
     <Router>
-      {/* <NavbarAndSidebar /> */}
       <Routes>
+        {/* Tüm sayfalar AuthWrapper içinde, ancak belirli sayfalar için token kontrolü yapılmaz */}
         <Route
           path="/"
-          element={<PageLayout />}
+          element={
+            <AuthWrapper>
+              <PageLayout />
+            </AuthWrapper>
+          }
           errorElement={<h1>error 500</h1>}
         >
           <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/landing" element={<LandingPage />} />
+          <Route path="/email-verified" element={<EmailVerified />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/confirm-email" element={<ConfirmEmail />} />
           <Route path="/order/event" element={<EventsOrder />} />
           <Route path="/order/school" element={<SchoolOrder />} />
           <Route path="/order/select-date" element={<SelectDate />} />
@@ -78,11 +76,10 @@ const ProjectRoutes = () => {
           <Route path="/addresses" element={<Addresses />} />
           <Route path="/add-address" element={<AddAddress />} />
           <Route path="/child" element={<AddChild />} />
-          <Route path="/cart-finish" element={<CartFinish/>} />
+          <Route path="/cart-finish" element={<CartFinish />} />
           <Route path="/order-list" element={<OrdersList />} />
           <Route path="/condition" element={<Condition />} />
           <Route path="/help" element={<Help />} />
-          {/* <Route path="/faq" element={<FAQ />} /> */}
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/product-details" element={<ProductDetails />} />
@@ -92,8 +89,8 @@ const ProjectRoutes = () => {
             element={<SelectPaymentMethod />}
           />
         </Route>
-        {/* notfound page */}
 
+        {/* Not found sayfası */}
         <Route path="/not-found" element={<NotFound />} />
         <Route path="*" element={<Navigate to="/not-found" replace />} />
       </Routes>

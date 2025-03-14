@@ -31,7 +31,7 @@ const SelectDate = () => {
     calendar: gregorian,
     locale: gregorian_en,
     digits: false,
-    format: "YYYY/MM/DD HH:mm",
+    format: "YYYY/MM/DD",
     // format: "YYYY/MM/DD",
   });
 
@@ -93,21 +93,21 @@ const SelectDate = () => {
           // }}
         />
         <div
-          className={`flex flex-row justify-between  w-full text-lg font-medium ltr`}
+          className={`flex flex-row justify-evenly mt-1  w-full text-lg font-medium ltr`}
         >
-          <Link to="/" className="fr-secondry-button all-center flex-row gap-1">
-            <ArrowGray className="w-4 h-auto" />
-            {t("back")}
+          <Link to="/" style={{border:"2px solid #FFB300"}} className="fr-secondry-button all-center flex-row gap-1 text-[#FFB300] px-8">
+            <ArrowGray className="w-4 h-auto text-[#FFB300]" />
+            {t("Back")}
           </Link>
           <button
             onClick={() => nextHandler()}
             disabled={!deliveryDate}
-            className={`bg-[#FFB300] flex justify-center items-center px-2 rounded-lg text-[#fff] all-center flex-row gap-1 shadow-none 
+            className={`bg-[#FFB300] flex justify-center  items-center px-8 rounded-lg text-[#fff] all-center flex-row gap-1 shadow-none 
             ${deliveryDate ? "!bg-[#FFB300]" : "bg-inherit"}
             `}
           >
-            {t("next")}
-            <ArrowWhite className="w-4 h-auto rotate-180" />
+            {t("Next")}
+            <ArrowWhite className="w-4 h-auto" />
           </button>
         </div>
       </div>

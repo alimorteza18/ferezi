@@ -2,7 +2,7 @@
 //                     ************
 import axios from "axios";
 import OpenNotificationWithIcon from "components/notificationWithIcon/OpenNotificationWithIcon";
-const baseURL = "https://ferezi.runflare.run/api";
+const baseURL = "https://admin.ferezi.com/api";
 
 const Axios = axios.create({
   baseURL,

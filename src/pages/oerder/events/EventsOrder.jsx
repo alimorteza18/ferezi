@@ -82,64 +82,41 @@ const EventsOrder = () => {
       <OrderTypeAndDeliveryDate
         deliveryDate={deliveryDate}
         setDeliveryDate={setDeliveryDate}
-        orderType={t("Event")}
+        orderType={t("Home")}
       />
 
       {deliveryDate === null ? null : (
         <>
           <div className="w-full flex flex-row justify-evenly mt-5">
-            <TabForSelectOrderType
+            {/* <TabForSelectOrderType
               itemTypes={itemTypes}
               setItemTypes={setItemTypes}
               firstTab={t("Ferezi choice")}
               secondTab={t("Your choice")}
               className=""
-            />
+            /> */}
           </div>
           <div className=" flex flex-col w-full h-full mt-5 gap-4 ">
-            {itemTypes === "pack" ? (
+    
               <>
-                {packData ? (
-                  packData.map((pack, index) => {
-                    return (
-                      <PackCard
-                        key={index}
-                        pack={pack}
-                        // price={pack.packPrice}
-                        // nutsImage={pack.nutsImage}
-                        // nutsName={pack.nutsName}
-                        // id={index + 100}
-                        orderTypeIsSchool={false}
-                        // cal={pack.cal}
-                      />
-                    );
-                  })
-                ) : (
-                  <Loading />
-                )}
-              </>
-            ) : (
-              <>
-                <SearchBox
+                {/* <SearchBox
                   searchText={searchText}
                   setSearchText={setSearchText}
-                />
+                /> */}
                 <ProductList
                   orderType="event"
                   datetime={convertToISOWithOffset(deliveryDate)}
                   searchText={searchText}
                 />
               </>
-            )}
           </div>
-          <div className="w-full all-center mt-5">
-            <button
-              onClick={() => checkTemporaryCartToContinue()}
-              className="fr-primary-button block"
-            >
-              {t("continue")}
-            </button>
-          </div>
+          <div className="w-full all-center my-4 ">
+                <button
+                  className="bg-[#FFB300] w-full rounded-lg block px-6 py-2 "
+                >
+                  {t("continue")}
+                </button>
+              </div>
         </>
       )}
     </div>

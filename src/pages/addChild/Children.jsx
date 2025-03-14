@@ -31,7 +31,7 @@ const Children = () => {
   const getAllchildList = () => {
     Axios.get("/account/children/")
       .then((res) => {
-        setChildren(res.data);
+        setChildren(res.data.children);
       })
       .catch((err) => {
         console.error(err);
@@ -60,16 +60,14 @@ const Children = () => {
 
   return (
     <div>
-      <TitleWithUnderline title={t("children list")} className="all-center" />
-      <div className="w-100 mt-4 all-center">
-        <button
-          onClick={() => showAddChildFormHandler()}
-          className="fr-primary-button w-100 "
-        >
-          {t("add new child")}
-        </button>
+      {/* <TitleWithUnderline title={t("children list")} className="all-center" /> */}
+      <div className="flex space-x-1 items-center text-lg">
+        <img src="./children.svg" alt="" />
+        <h1 className="font-bold">Children</h1>
       </div>
-      <div className="w-full flex flex-col justify-center mt-4">
+      {/* <div className="w-100 mt-4 all-center">
+      </div> */}
+      <div className="w-full flex flex-col justify-center mt-2">
         {children === undefined &&
           [0, 1, 2, 3].map((item) => {
             return <ChildCardSkeleton key={item} />;
@@ -86,6 +84,12 @@ const Children = () => {
             />
           );
         })}
+        <img
+          src="./plus.svg"
+          onClick={() => showAddChildFormHandler()}
+          className="cursor-pointer w-14 h-14 bottom-[28px] right-[28px] absolute"
+        />
+
       </div>
       {
         <AddChildComponent

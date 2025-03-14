@@ -1,208 +1,127 @@
+import React, { useState } from "react";
 import YellowButton from "components/formItems/button/yellowButton/YellowButton";
-import { useFormik } from "formik";
 import LandingAndSignupWrapper from "layouts/landingAndSignupWrapper/LandingAndSignupWrapper";
 import { useTranslation } from "react-i18next";
-import classes from "./SignUp.module.scss";
-
-import OpenNotificationWithIcon from "components/notificationWithIcon/OpenNotificationWithIcon";
-import AppleAnimationIcon from "components/uiAndIcons/appleAnimationIcon/AppleAnimationIcon";
 import Axios from "middleware/axiosInstance";
 import { useNavigate } from "react-router-dom";
-import { signUpValidationSchema } from "validation/signupValidation";
-import { useState } from "react";
+import OpenNotificationWithIcon from "components/notificationWithIcon/OpenNotificationWithIcon";
+import classes from "./SignUp.module.scss";
 
 const SignUp = () => {
-  const [principal, setpPrincipal] = useState("false");
-
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const { t } = useTranslation();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [full_name, setFull_Name] = useState("");
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-      password2: "",
-      username: "",
-      principal: "false",
-    },
-    validationSchema: signUpValidationSchema, // Use the imported validation schema
-    onSubmit: (values, { setSubmitting, setErrors }) => {
-      Axios.post("auth/register/", values)
-        .then((res) => {
-          if (res.status === 201) {
-            OpenNotificationWithIcon(
-              t("signUp successfully"),
-              t("you signed up successfully")
-            );
-            // Axios.post(
-            //   "account/activate_account/",
-            //   { code: 55555 },
-            //   {
-            //     headers: {
-            //       Authorization: `Bearer ${res.data.token}`,
-            //     },
-            //   }
-            // ).then(res => {
-            //   OpenNotificationWithIcon(
-            //     t("activation successful"),
-            //     t("your account actived successfully")
-            //   );
-            // })
-            localStorage.setItem("token", res.data.token);
-            localStorage.setItem("email", res.data.email);
-            localStorage.setItem("fullname", res.data.fullname);
-            localStorage.setItem("id", res.data.id);
-            // localStorage.setItem("refresh", res.data.refresh);
-            localStorage.setItem("username", res.data.username);
-            if (values.principal === "true") {
-              window.location.href = "https://ferezi.runflare.run/admin";
-            } else {
-              navigate("/");
-            }
-          }
-        })
-        .catch((err) => {
-          // error in register items
-          if (err.response && err.response.status === 400) {
-            const serverErrors = err.response.data;
-            // Map server errors to Formik fields
-            const errors = {};
-            if (serverErrors.email) {
-              errors.email = serverErrors.email[0];
-            }
-            if (serverErrors.password) {
-              errors.password = serverErrors.password[0];
-            }
-            if (serverErrors.password2) {
-              errors.password2 = serverErrors.password2[0];
-            }
-            if (serverErrors.username) {
-              errors.username = serverErrors.username[0];
-            }
-            setErrors(errors); // Set the errors in Formik
-          }
-          console.error(err);
-        })
-        .finally(() => {
-          setSubmitting(false); // Stop the submitting state after submission
-        });
-    },
-  });
+  const validate = () => {
+    let tempErrors = {};
+    if (!email) tempErrors.email = t("Email is required");
+    if (!full_name) tempErrors.full_name = t("full name is required");
+    if (!password) tempErrors.password = t("Password is required");
+    if (password !== password2) tempErrors.password2 = t("Passwords must match");
+    setErrors(tempErrors);
+    return Object.keys(tempErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    setLoading(true);
+    try {
+      const response = await Axios.post("auth/register/", { email, password, password2, full_name });
+      if (response.status === 201) {
+        OpenNotificationWithIcon(t("signUp successfully"), t("you signed up successfully"));
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("email", response.data.email);
+        localStorage.setItem("fullname", response.data.fullname);
+        localStorage.setItem("id", response.data.id);
+        localStorage.setItem("username", response.data.username);
+        localStorage.setItem("verified", response.data.is_verified);
+        navigate("/confirm-email");
+      }
+    } catch (err) {
+      if (err.response && err.response.status === 400) {
+        const serverErrors = err.response.data;
+        setErrors(serverErrors);
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <LandingAndSignupWrapper>
       <div className={classes.signup}>
-        <AppleAnimationIcon />
         <div className="my-[20px] font-bold text-[20px]">{t("sign up")}</div>
-        <form
-          className="flex flex-col items-center justify-start h-100 gap-2 mt-4 "
-          onSubmit={formik.handleSubmit}
-        >
+        <form className="flex flex-col items-center justify-start h-100 gap-2 mt-4" onSubmit={handleSubmit}>
           <div className="login-input-box">
             <input
               type="email"
               id="email"
               name="email"
-              className={formik.errors.email ? "!border !border-[#FF585A]" : ""}
+              className={errors.email ? "!border !border-[#FF585A]" : ""}
               placeholder="test@gmail.com"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label htmlFor="email">{t("Email")}</label>
           </div>
-          {formik.touched.email && formik.errors.email ? (
-            <p className="validation-error-message"> {formik.errors.email}</p>
-          ) : null}
+          {errors.email && <p className="validation-error-message">{errors.email}</p>}
+          <div className="login-input-box">
+            <input
+              type="text"
+              id="full_name"
+              name="full_name"
+              className={errors.full_name ? "!border !border-[#FF585A]" : ""}
+              placeholder="Your Full Name"
+              value={full_name}
+              onChange={(e) => setFull_Name(e.target.value)}
+            />
+            <label htmlFor="full_name">{t("Full Name")}</label>
+          </div>
+          {errors.full_name && <p className="validation-error-message">{errors.full_name}</p>}
           <div className="login-input-box">
             <input
               type="password"
               id="password"
               name="password"
-              className={
-                formik.touched.password && formik.errors.password
-                  ? "border border-[#FF585A]"
-                  : ""
-              }
+              className={errors.password ? "border border-[#FF585A]" : ""}
               placeholder="Password"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <label htmlFor="password">{t("Password")}</label>
           </div>
-          {formik.touched.password && formik.errors.password ? (
-            <p className="validation-error-message">{formik.errors.password}</p>
-          ) : null}
+          {errors.password && <p className="validation-error-message">{errors.password}</p>}
+
           <div className="login-input-box">
             <input
               type="password"
               id="password2"
               name="password2"
-              className={
-                formik.touched.password2 && formik.errors.password2
-                  ? "border border-[#FF585A]"
-                  : ""
-              }
+              className={errors.password2 ? "border border-[#FF585A]" : ""}
               placeholder="Confirm Password"
-              value={formik.values.password2}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              value={password2}
+              onChange={(e) => setPassword2(e.target.value)}
             />
             <label htmlFor="password2">{t("Confirm Password")}</label>
           </div>
-          {formik.touched.password2 && formik.errors.password2 ? (
-            <p className="validation-error-message">
-              {formik.errors.password2}
-            </p>
-          ) : null}
-          <div className="login-input-box">
-            <input
-              type="text"
-              id="username"
-              name="username"
-              className={
-                formik.touched.username && formik.errors.username
-                  ? "border border-[#FF585A]"
-                  : ""
-              }
-              placeholder="Username"
-              value={formik.values.username}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            <label htmlFor="username">{t("Username")}</label>
-          </div>
-          <div className="flex w-full space-x-2 items-center">
-            <input
-              type="checkbox"
-              id="principal"
-              name="principal"
-              value={formik.values.principal}
-              checked={formik.values.principal === "true"}
-              onChange={(e) => formik.handleChange({
-                target: {
-                  name: "principal",
-                  value: e.target.checked ? "true" : "false",
-                },
-              })}
-              className="w-4 h-4"
-            />
-            <label htmlFor="principal">{t("principal")}</label>
-          </div>
-          <p className="validation-error-message">
-            {formik.touched.username && formik.errors.username ? (
-              <div>{formik.errors.username}</div>
-            ) : null}
-          </p>
+          {errors.password2 && <p className="validation-error-message">{errors.password2}</p>}
+
           <YellowButton
-            loading={formik.isSubmitting} // Use formik's isSubmitting state
+            loading={loading}
             type="submit"
             name={t("Sign Up")}
             className="w-full h-12 mt-1"
           />
         </form>
+        <p className="text-sm mt-4">Do You Have a Account? <span onClick={() => {navigate('/login')}} className="font-bold text-[#FBBB23] cursor-pointer">Login</span></p>
       </div>
     </LandingAndSignupWrapper>
   );

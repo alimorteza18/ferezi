@@ -2,7 +2,7 @@
   position: relative;
   width: calc(100% - calc(20px + 2vw));
   // footer(footermenu) height = 60px
-  height: calc(100% - calc(theme("height.footerMenu") + theme("height.header") + 0.5vh + 10px + 45px));
+  height: calc(100% - calc(theme("height.footerMenu") + theme("height.header") + 0.5vh + 20px + 45px));
   // margin-top: calc(0.25vh + 5px);
   margin-top: calc(45px);
   background-image: url("../../assets/images/backgrounds/new-tray.png");
